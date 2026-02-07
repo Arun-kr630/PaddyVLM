@@ -1,7 +1,7 @@
 
 # 🌾 Paddy-VLM
 <p align="justify">
-Paddy is one of the most important crops worldwide, but its cultivation suffers significant yield losses due to diseases and pests that are often difficult to accurately identify and manage. Existing models are largely limited to image classification or detection and lack the contextual agricultural knowledge required for reliable diagnosis and effective mitigation. We present PaddyVLM, a domain-adapted vision-language model for paddy crop analysis, capable of identifying diseases and pests, assessing severity, and providing actionable guidance. Built on LLaVA-v1.5-7B-LoRA, our model is trained using PaddyInstruct, a curated instruction-tuning dataset derived from the Paddy Doctor (10,407 images, 10 classes) and Paddy Pest (5,673 images, 20 classes) datasets. PaddyInstruct combines LLaVA-13B generated descriptions, Mistral-7B generated simple Q&A and multi-turn dialogues, and expert knowledge refinement. Fine-tuning on this dataset equips PaddyVLM with robust fine-grained recognition and context-aware reasoning. Experiments show that PaddyVLM substantially outperforms general-purpose LMMs in both disease and pest understanding, demonstrating its potential as a practical expert assistant for farmers and agricultural researchers.  
+Large multimodal models (LMMs) excel at general visionlanguage reasoning but often underperform in agriculture, where disease and pest diagnosis demands fine-grained, domain-specific understanding. We present PaddyVLM, a domain-adapted vision-language model for paddy crop analysis, capable of identifying diseases and pests, assessing severity, and providing actionable guidance. Built on LLaVA-v1.5-7B-LoRA, our model is trained using PaddyInstruct, a curated instruction-tuning dataset derived from the Paddy Doctor (10,407 images, 10 classes) and Paddy Pest (5,673 images, 20 classes) datasets, annotated and verified by agronomists. PaddyInstruct combines LLaVA-13B–generated descriptions, Mistral-7B–generated Q&A and multi-turn dialogues, and expert knowledge refinement. Fine-tuning on this dataset equips PaddyVLM with robust fine-grained recognition and context-aware reasoning. Experiments show that PaddyVLM substantially outperforms general-purpose LMMs in both disease and pest understanding, demonstrating its potential as a practical expert assistant for farmers and agricultural researchers. 
 </p>
 
 ---
@@ -121,8 +121,8 @@ bash scripts/v1_5/finetune_task_lora.sh
 Please adjust the below file path inside scripts/v1_5/finetune_task_lora.sh if needed
 --data_path ./playground/data/llava_v1_5_mix665k.json \
 --image_folder ./playground/data/dataset
-```
 ✅ Done!
+```
 
 References
 - [LLaVA Official Repository](https://github.com/haotian-liu/LLaVA)
